@@ -1,0 +1,6 @@
+<ul class="scroll-list">
+  <% _.each(collection, function(person){ %>
+    <li><i class="icon-user"></i><%= person.get('fullName') %><a class="pull-right nav_link btn btn-danger" style="margin:0; margin-top: -.35em; margin-right: -5em;" rel="removePerson/<%= person.cid %>">Remove</a></li>
+  <% }) %>
+  <li class="nav_link" rel="#addPerson/<%= event_cid %>"><i class="icon-plus-sign"></i>Add People To Meetup</li>
+</ul>

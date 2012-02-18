@@ -1,0 +1,10 @@
+<ul class="scroll-list">
+  <% _.each(collection, function(meetup, index){ %>
+    <li class="nav_link" rel="#showMeetup/<%= meetup.cid %>">
+      <i class="icon-chevron-right"></i>
+      <%= meetup.get('name') %>
+      <a class="pull-right nav_link btn btn-danger" style="margin:0; margin-top: -.35em; margin-right: 1.5em;" rel="removeMeetup/<%= meetup.cid %>">Remove</a>
+    </li>
+  <% }); %>
+  <li class="nav_link" rel="#newMeetup"><i class="icon-plus-sign"></i>Create New Meetup</li>
+</ul>
