@@ -1,6 +1,7 @@
 import os
 from tornado.web import Application
 from tornado.web import RequestHandler
+from tornado.ioloop import IOLoop
 
 class IndexHandler(RequestHandler):
 
@@ -13,4 +14,6 @@ app = Application([
 ])
 
 if __name__ == "__main__":
-    app.listen(os.environ["PORT"] or 3000);
+    port = os.environ.get("PORT") or 3000
+    app.listen(port)
+    IOLoop.instance().start()
