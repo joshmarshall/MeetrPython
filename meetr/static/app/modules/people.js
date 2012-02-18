@@ -38,7 +38,7 @@
     el: '#content',
     events: {
       'blur input' : 'checkInput',
-      'click btn-success': 'addPerson'
+      'click .btn-success': 'addPerson'
     },
     render: function(){
       var self = this, 
@@ -55,13 +55,17 @@
         $('.btn-success').addClass('disabled');
       }
     },
-    addPerson: function(done){
-      meetr.models.meetup.get('people').add(new People.Model({
-        name: $('[name=nickname]').val(),
+    addPerson: function(data){
+      console.log(data);
+      var person= new People.Model();
+      person.set({
+        fullName: $('[name=nickname]').val(),
         phoneNumber: $('[name=phone_number]').val()
-      }));
+      });
 
-      done();
+      meetr.models.meetup.get('people').add(person);
+
+      meetr.app.router.navigate('#showMeetup/'+ $('[name=cid]').val());
     }
   });
 

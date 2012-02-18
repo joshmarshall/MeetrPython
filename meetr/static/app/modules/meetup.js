@@ -5,20 +5,21 @@
       
   Meetup.Model = Backbone.Model.extend({
     initialize: function(data){
-      this.set(data);
       this.set('people', new People.Collection());
+      this.get('people').url = 'http://meetr-python.herokuapp.com/users/josh'+ this.get('people_url');
       this.set('places', new Place.Collection());
+      this.get('places').url = 'http://meetr-python.herokuapp.com/users/josh'+ this.get('activities_url');
     }
     
   });
 
   Meetup.Collection = Backbone.Collection.extend({
+    url: 'http://meetr-python.herokuapp.com/users/josh/meetups',
+    parse: function(data){
+      return data.meetups;
+    },
     initialize: function(){
-      //adds test data for now
-      this.add(new Meetup.Model({
-        name: "Event 1"
-      }));
-      console.log(this);
+      this.url = 'http://meetr-python.herokuapp.com/users/josh'+this.url;
     }
   });
 
