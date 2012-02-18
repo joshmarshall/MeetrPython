@@ -10,7 +10,7 @@ from meetr.handlers import meetup_handler
 
 
 def main():
-    mongo_uri = os.environ.get("MONGOHQ_URI") or \
+    mongo_uri = os.environ.get("MONGOHQ_URL") or \
         "mongodb://localhost:27017/meetr_test"
     mongo_uri_parts = urlparse.urlparse(mongo_uri)
 
