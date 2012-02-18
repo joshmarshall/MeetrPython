@@ -90,7 +90,7 @@ var Router = Backbone.Router.extend({
     var header_data = {
       left: '<a class="nav_link btn" rel="home">Back</a>',
       title: 'People',
-      right: '<a class="nav_link btn btn-success' + (meetr.models.meetup.get('people').models.length == 0? ' disabled' : '') +'"'+ (meetr.models.meetup.get('people').models.length == 0? '' : 'rel="places/'+ meetr.models.meetup.cid+ '"') +'>Next</a>'
+      right: '<a class="nav_link btn btn-success rel="places/'+ meetr.models.meetup.cid+ '">Next</a>'
     };
 
     if(!meetr.panes.header){
