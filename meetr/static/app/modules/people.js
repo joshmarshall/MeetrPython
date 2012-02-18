@@ -65,6 +65,7 @@
       meetr.models.meetup.get('people').push(person);
 
       meetr.app.router.navigate('#showMeetup/'+ $('[name=cid]').val());
+      meetr.panes.people_list.render();
     }
   });
 
