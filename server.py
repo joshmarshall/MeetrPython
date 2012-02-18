@@ -6,6 +6,7 @@ from tornado.ioloop import IOLoop
 
 from meetr.handlers import index_handler
 from meetr.handlers import meetup_handler
+from meetr.handlers import activity_handler
 
 
 
@@ -21,8 +22,13 @@ def main():
     app = Application([
         # List routes here
         ("/", index_handler.IndexHandler),
-        ("/users/(\w+)/meetups", meetup_handler.MeetupListHandler)
-    ])
+        ("/users/(\w+)/meetups", meetup_handler.MeetupListHandler),
+        ("/meetups/(\w+)", meetup_handler.MeetupHandler),
+        ("/meetups/(\w+)/activities", meetup_handler.MeetupActivitiesHandler),
+        ("/meetups/(\w+)/people", meetup_handler.MeetupPeopleHandler),
+        ("/activities/(\w+)", activity_handler.ActivityHandler),
+        ("/activities/(\w+)/votes", activity_handler.ActivityVotesHandler),
+    ], static_path="meetr/static")
     port = os.environ.get("PORT") or 3000
     app.listen(port)
     IOLoop.instance().start()
