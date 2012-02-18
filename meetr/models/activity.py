@@ -13,5 +13,7 @@ class Activity(mogo.Model):
         return {
             "uid": self.uid,
             "name": self.name,
+            "votes": self.votes,
+            "votes_url": "/activities/%s/votes" % self.uid,
             "url": "/activities/%s" % self.uid
         }
