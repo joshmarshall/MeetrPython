@@ -63,9 +63,18 @@
       };
 
       meetr.models.meetup.get('people').push(person);
-
-      meetr.app.router.navigate('#showMeetup/'+ $('[name=cid]').val());
-      meetr.panes.people_list_view.render();
+      $.ajax({
+          url: 'http://localhost:3000' + meetr.models.meetup.get('people_url'),
+          method: 'post',
+          data: {
+            name: $('[name=nickname]').val(),
+            number: $('[name=phone_number]').val()
+          },
+          success: function(data) {
+            meetr.app.router.navigate('#showMeetup/'+ $('[name=cid]').val());
+            meetr.panes.people_list_view.render();
+          }
+        });
     }
   });
 
