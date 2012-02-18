@@ -64,7 +64,10 @@
 
       meetr.models.meetup.get('people').push(person);
       $.ajax({
-          url: 'http://localhost:3000' + meetr.models.meetup.get('people_url'),
+          url: 'http://meetr-python.herokuapp.com' + meetr.models.meetup.get('people_url'),
+          headers: {
+            'content-type' : 'application/JSON'
+          },
           type: 'post',
           data: {
             name: $('[name=nickname]').val(),
