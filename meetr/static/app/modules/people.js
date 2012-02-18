@@ -57,13 +57,12 @@
     },
     addPerson: function(data){
       console.log(data);
-      var person= new People.Model();
-      person.set({
-        fullName: $('[name=nickname]').val(),
+      var person = {
+        name: $('[name=nickname]').val(),
         phoneNumber: $('[name=phone_number]').val()
-      });
+      };
 
-      meetr.models.meetup.get('people').add(person);
+      meetr.models.meetup.get('people').push(person);
 
       meetr.app.router.navigate('#showMeetup/'+ $('[name=cid]').val());
     }
