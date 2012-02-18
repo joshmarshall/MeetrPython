@@ -104,7 +104,6 @@ var Router = Backbone.Router.extend({
     //meetr.models.meetup.get('people').fetch({
     //   success: function(){
             meetr.panes.people_list_view.collection = meetr.models.meetup.get('people');
-
             meetr.panes.header.render(header_data);
             meetr.panes.people_list_view.render(cid);
     //   }

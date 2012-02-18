@@ -23,7 +23,7 @@
     render: function(event_cid){
       var self = this,
         data = {
-          collection: this.collection.models,
+          collection: this.collection,
           event_cid: event_cid
         };
       console.log(data);
