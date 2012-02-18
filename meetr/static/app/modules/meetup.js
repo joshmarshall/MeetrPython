@@ -19,7 +19,6 @@
       return data.meetups;
     },
     initialize: function(){
-      this.url = 'http://meetr-python.herokuapp.com/users/josh'+this.url;
     }
   });
 
