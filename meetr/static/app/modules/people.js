@@ -63,14 +63,14 @@
       };
 
       meetr.models.meetup.get('people').push(person);
-      $.ajax({
+$.ajax({
           url: 'http://meetr-python.herokuapp.com' + meetr.models.meetup.get('people_url'),
-          contentType: 'application/json',
-          type: 'post',
-          data: {
+          type: 'POST',
+          dataType: 'text',
+          data: JSON.stringify({
             name: $('[name=nickname]').val(),
-            number: $('[name=phone_number]').val()
-          },
+            phone: $('[name=phone_number]').val()
+          }),
           success: function(data) {
             meetr.app.router.navigate('#showMeetup/'+ $('[name=cid]').val());
             meetr.panes.people_list_view.render();
