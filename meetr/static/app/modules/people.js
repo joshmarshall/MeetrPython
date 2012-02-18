@@ -18,7 +18,7 @@
 
   People.Views.ListView= Backbone.View.extend({
     model: People.Collection,
-    template: '/app/templates/people_list.html',
+    template: '/static/app/templates/people_list.html',
     el: '#content',
     render: function(event_cid){
       var self = this,
@@ -34,7 +34,7 @@
   });
 
   People.Views.AddPersonForm = Backbone.View.extend({
-    template: '/app/templates/add_new_person.html',
+    template: '/static/app/templates/add_new_person.html',
     el: '#content',
     events: {
       'blur input' : 'checkInput',

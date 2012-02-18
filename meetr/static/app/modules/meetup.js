@@ -24,7 +24,7 @@
   });
 
   Meetup.Views.ListView = Backbone.View.extend({
-    template: "/app/templates/meetups_list.html",
+    template: "/static/app/templates/meetups_list.html",
     model: Meetup.Collection,
     el: '#content',
     render: function(){
@@ -39,7 +39,7 @@
   });
 
   Meetup.Views.NewMeetupForm = Backbone.View.extend({
-    template: "/app/templates/new_meetup_form.html",
+    template: "/static/app/templates/new_meetup_form.html",
     el: "#content",
     events: {
       'blur input': 'checkInputs',

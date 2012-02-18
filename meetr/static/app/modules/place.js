@@ -16,7 +16,7 @@
   });
 
   Place.Views.CategoryListView = Backbone.View.extend({
-    template: '/app/templates/categories_list.html',
+    template: '/static/app/templates/categories_list.html',
     el: "#content",
     render: function(){
       var self= this;
@@ -28,7 +28,7 @@
 
   Place.Views.ListView = Backbone.View.extend({
     el: "#content",
-    template: "/app/templates/places_list.html",
+    template: "/static/app/templates/places_list.html",
     model: Place.Collection,
     render: function(){
       var self= this,

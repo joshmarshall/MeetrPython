@@ -1,6 +1,6 @@
 (function(Application){
   Application.HeaderView = Backbone.View.extend({
-    template: '/app/templates/header.html',
+    template: '/static/app/templates/header.html',
     el: 'header',
     render: function(data){
       var self = this;

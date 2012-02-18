@@ -41,7 +41,12 @@ var Router = Backbone.Router.extend({
     meetr.panes.meetup_list_view.collection = meetr.models.meetup_collection;
 
     meetr.panes.header.render(header_data);
-    meetr.panes.meetup_list_view.render();
+
+    meetr.models.meetup_collection.fetch({
+      success: function(){
+        meetr.panes.meetup_list_view.render();
+      }
+    });
   },
 
   newMeetup: function(){
