@@ -65,7 +65,7 @@
       meetr.models.meetup.get('people').push(person);
       $.ajax({
           url: 'http://localhost:3000' + meetr.models.meetup.get('people_url'),
-          method: 'post',
+          type: 'post',
           data: {
             name: $('[name=nickname]').val(),
             number: $('[name=phone_number]').val()
