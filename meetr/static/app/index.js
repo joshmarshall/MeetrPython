@@ -85,6 +85,7 @@ var Router = Backbone.Router.extend({
   },
 
   people: function(cid){
+    console.log('here');
     meetr.models.meetup = meetr.models.meetup_collection.getByCid(cid);
 
     var header_data = {
